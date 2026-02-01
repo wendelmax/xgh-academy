@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #fafafa;
   --foreground: #171717;
+  --accent: #0f766e;
+  --accent-light: #14b8a6;
 }
 
 @theme inline {
@@ -16,11 +18,62 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --accent: #2dd4bf;
+    --accent-light: #5eead4;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
+
+@keyframes diagram-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes arrow-flow {
+  to {
+    stroke-dashoffset: -12;
+  }
+}
+
+@keyframes arrow-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+.diagram-xgh-agil {
+  animation: diagram-fade-up 0.5s ease-out forwards;
+}
+
+.diagram-xgh-agil .arrow-flow {
+  stroke-dasharray: 6 6;
+  stroke-dashoffset: 0;
+  animation: arrow-flow 1.2s linear infinite;
+}
+
+.diagram-xgh-agil .arrow-pulse {
+  animation: arrow-pulse 2s ease-in-out infinite;
+}
+
+.diagram-xgh-agil .side-group {
+  transition: transform 0.25s ease;
+}
+
+.diagram-xgh-agil .side-group:hover {
+  transform: scale(1.02);
+}
+
