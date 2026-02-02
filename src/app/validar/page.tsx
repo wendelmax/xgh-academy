@@ -60,7 +60,7 @@ export default function ValidarPage() {
         Validar Certificado
       </h1>
       <p className="mt-4 text-neutral-600 dark:text-neutral-400">
-        Consulte a autenticidade de um certificado XDH pelo ID do certificado
+        Consulte a autenticidade de um certificado XGH pelo ID do certificado
         ou pela identificação do participante (e-mail ou nome).
       </p>
 
@@ -93,7 +93,7 @@ export default function ValidarPage() {
         <div className="mt-6">
           <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300">
             {mode === "id"
-              ? "ID do certificado (ex.: XDH-ABC123-DEF456-GHI789)"
+              ? "ID do certificado (ex.: XGH-ABC123-DEF456-GHI789)"
               : "E-mail ou nome do participante"}
           </label>
           <div className="mt-2 flex gap-2">
@@ -104,7 +104,7 @@ export default function ValidarPage() {
               onKeyDown={(e) => e.key === "Enter" && search()}
               placeholder={
                 mode === "id"
-                  ? "XDH-XXXXXX-XXXXXX-XXXXXX"
+                  ? "XGH-XXXXXX-XXXXXX-XXXXXX"
                   : "email@exemplo.com ou Nome"
               }
               className="flex-1 rounded-lg border border-neutral-300 bg-white px-4 py-2 dark:border-neutral-600 dark:bg-neutral-800 dark:text-white"

@@ -79,7 +79,7 @@ export default function LinkedInIntegration({
               <li>Copie a URL da credencial abaixo.</li>
               <li>No LinkedIn, acesse Perfil e depois Adicionar seção.</li>
               <li>Escolha Licenças e certificações.</li>
-              <li>Preencha: Nome = {credentialName}, Organização = XDH Academy, URL da credencial = (cole a URL copiada).</li>
+              <li>Preencha: Nome = {credentialName}, Organização = XGH Academy, URL da credencial = (cole a URL copiada).</li>
               <li>Salve.</li>
             </ol>
             <div className="mt-4 flex flex-wrap gap-2">

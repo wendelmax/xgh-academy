@@ -2,7 +2,7 @@ import { principios } from "@/data/principios";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Os 22 Princípios do XDH | XDH Academy",
+  title: "Os 22 Princípios do XGH | XGH Academy",
   description:
     "Lista completa dos 22 princípios do Extreme Go Horse com contraste às práticas recomendadas.",
 };
@@ -11,7 +11,7 @@ export default function PrincipiosPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-12">
       <h1 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-white">
-        Os 22 Princípios do XDH
+        Os 22 Princípios do XGH
       </h1>
       <p className="mt-4 text-neutral-600 dark:text-neutral-400">
         Cada princípio descreve uma prática XGH. Em contraste, indicamos o
@@ -61,7 +61,7 @@ export default function PrincipiosPage() {
           href="/certificacao"
           className="rounded-lg border border-neutral-300 px-5 py-2.5 text-sm font-medium text-neutral-700 hover:bg-neutral-100 dark:border-neutral-600 dark:text-neutral-300 dark:hover:bg-neutral-800"
         >
-          Certificação XDH
+          Certificação XGH
         </Link>
       </div>
     </div>

@@ -12,7 +12,7 @@ export interface CertificationLevelInfo {
 export const certificationLevels: CertificationLevelInfo[] = [
   {
     id: "foundation",
-    name: "XDH Foundation",
+    name: "XGH Foundation",
     description: "Conhecimento dos princípios e capacidade de identificar práticas XGH e alternativas corretas.",
     durationMinutes: 45,
     minScore: 70,
@@ -20,7 +20,7 @@ export const certificationLevels: CertificationLevelInfo[] = [
   },
   {
     id: "practitioner",
-    name: "XDH Practitioner",
+    name: "XGH Practitioner",
     description: "Aplicação em cenários reais: POC, MVP e entrega ágil com qualidade.",
     durationMinutes: 60,
     minScore: 75,
@@ -28,7 +28,7 @@ export const certificationLevels: CertificationLevelInfo[] = [
   },
   {
     id: "expert",
-    name: "XDH Expert",
+    name: "XGH Expert",
     description: "Domínio completo: liderança de práticas, anti-padrões e transformação de times.",
     durationMinutes: 90,
     minScore: 80,

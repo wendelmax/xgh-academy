@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "XDH Academy | Extreme Go Horse - Aprendizado Formal",
+  title: "XGH Academy | Extreme Go Horse - Aprendizado Formal",
   description:
-    "Plataforma de aprendizado sobre Extreme Go Horse (XDH): da sátira às práticas produtivas para POC, MVP e entrega ágil com qualidade. Certificação e validação de certificados.",
+    "Plataforma de aprendizado sobre Extreme Go Horse (XGH): da sátira às práticas produtivas para POC, MVP e entrega ágil com qualidade. Certificação e validação de certificados.",
 };
 
 export default function RootLayout({

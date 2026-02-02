@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "POC, MVP e Agilidade | XDH Academy",
+  title: "POC, MVP e Agilidade | XGH Academy",
   description:
     "Como ser ágil e produtivo sem cair no XGH: entregas rápidas com qualidade, visibilidade e práticas sustentáveis.",
 };
@@ -104,7 +104,7 @@ export default function BoasPraticasPage() {
           href="/certificacao"
           className="rounded-lg border border-neutral-300 px-5 py-2.5 text-sm font-medium text-neutral-700 hover:bg-neutral-100 dark:border-neutral-600 dark:text-neutral-300 dark:hover:bg-neutral-800"
         >
-          Certificação XDH
+          Certificação XGH
         </Link>
       </div>
     </div>

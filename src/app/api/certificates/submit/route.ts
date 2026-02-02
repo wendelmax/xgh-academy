@@ -7,7 +7,7 @@ import {
 import { saveCertificate, hasCertificationForLevel } from "@/lib/certificates";
 
 function generateCertificateId(): string {
-  const prefix = "XDH";
+  const prefix = "XGH";
   const segment = () =>
     Math.random().toString(36).replace(/[^a-z0-9]/g, "").slice(0, 6).toUpperCase();
   return `${prefix}-${segment()}-${segment()}-${segment()}`;

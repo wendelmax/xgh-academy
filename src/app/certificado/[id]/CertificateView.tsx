@@ -80,7 +80,7 @@ export default function CertificateView({
               <p
                 className={`text-xs font-semibold uppercase tracking-[0.2em] ${style.label}`}
               >
-                XDH Academy
+                XGH Academy
               </p>
               <h1 className="mt-2 font-serif text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-100 sm:text-3xl">
                 Certificado de Conclusão
@@ -127,14 +127,14 @@ export default function CertificateView({
         <div className="mt-4 flex flex-wrap items-center gap-3">
           <a
             href={`/api/certificates/${certificateId}/pdf`}
-            download={`XDH-Academy-${certificate.certificateId}.pdf`}
+            download={`XGH-Academy-${certificate.certificateId}.pdf`}
             className="inline-flex items-center rounded-lg bg-neutral-900 px-4 py-2.5 text-sm font-medium text-white hover:bg-neutral-700 dark:bg-teal-600 dark:hover:bg-teal-500"
           >
             Baixar certificado (PDF)
           </a>
           <LinkedInIntegration
             certificateId={certificateId}
-            credentialName={`${certificate.levelName} - XDH Academy`}
+            credentialName={`${certificate.levelName} - XGH Academy`}
           />
           <Link
             href="/badges"

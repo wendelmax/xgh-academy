@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="font-semibold text-neutral-900 dark:text-white">
-              XDH Academy
+              XGH Academy
             </p>
             <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
               Conhecimento formal sobre Extreme Go Horse e práticas ágeis
@@ -38,7 +38,7 @@ export default function Footer() {
           </div>
         </div>
         <p className="mt-6 border-t border-neutral-200 pt-6 text-center text-xs text-neutral-500 dark:border-neutral-800 dark:text-neutral-400">
-          Conteúdo educacional. Certificações XDH são emitidas por XDH Academy
+          Conteúdo educacional. Certificações XGH são emitidas por XGH Academy
           para fins de comprovação de conhecimento.
         </p>
       </div>

@@ -2,7 +2,7 @@ import Link from "next/link";
 import DiagramXghVsAgil from "@/components/DiagramXghVsAgil";
 
 export const metadata = {
-  title: "O que é XDH | XDH Academy",
+  title: "O que é XGH | XGH Academy",
   description:
     "Origem e contexto do Extreme Go Horse (XGH), por que estudar de forma séria e o que extrair para POC, MVP e agilidade.",
 };
@@ -11,7 +11,7 @@ export default function OQueEXdhPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-12">
       <h1 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-white">
-        O que é XDH (Extreme Go Horse)
+        O que é XGH (Extreme Go Horse)
       </h1>
       <p className="mt-4 text-neutral-600 dark:text-neutral-400">
         O eXtreme Go Horse (XGH) é uma metodologia satírica brasileira,
@@ -24,14 +24,14 @@ export default function OQueEXdhPage() {
 
       <section className="mt-10">
         <h2 className="text-xl font-semibold text-neutral-900 dark:text-white">
-          Por que estudar XDH de forma séria?
+          Por que estudar XGH de forma séria?
         </h2>
         <p className="mt-3 text-neutral-600 dark:text-neutral-400">
           Conhecer os princípios do XGH permite identificar rapidamente quando um
           projeto ou time está adotando essas práticas. Em cenários de alta
           pressão (prazos curtos, POC, MVP), é comum que equipes caiam em
           atalhos que parecem ágeis mas geram dívida técnica e risco. O estudo
-          formal do XDH ajuda a:
+          formal do XGH ajuda a:
         </p>
         <ul className="mt-4 list-inside list-disc space-y-2 text-neutral-600 dark:text-neutral-400">
           <li>Reconhecer anti-padrões antes que virem cultura</li>
@@ -50,7 +50,7 @@ export default function OQueEXdhPage() {
           ser extremamente produtivo e ágil para entregar POC, MVP e produtos
           reais mantendo um mínimo de qualidade, visibilidade e responsabilidade.
           Isso inclui testes críticos, refatoração possível, escopo negociado e
-          transparência com o cliente. O XDH Academy existe para formalizar esse
+          transparência com o cliente. O XGH Academy existe para formalizar esse
           conhecimento e certificar que você domina tanto os princípios quanto as
           alternativas corretas.
         </p>

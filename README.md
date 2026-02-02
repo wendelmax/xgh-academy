@@ -1,11 +1,11 @@
-# XDH Academy
+# XGH Academy
 
-Plataforma web de aprendizado formal sobre Extreme Go Horse (XDH): da sátira às práticas produtivas para POC, MVP e entrega ágil com qualidade. Inclui material didático, certificação em níveis (Foundation, Practitioner, Expert) e validação de certificados.
+Plataforma web de aprendizado formal sobre Extreme Go Horse (XGH): da sátira às práticas produtivas para POC, MVP e entrega ágil com qualidade. Inclui material didático, certificação em níveis (Foundation, Practitioner, Expert) e validação de certificados.
 
 ## Funcionalidades
 
-- **Páginas de conteúdo**: O que é XDH, os 22 princípios (com contraste às práticas recomendadas), POC/MVP e agilidade sustentável, com links para referências externas e diagramas.
-- **Certificação**: Três níveis (XDH Foundation, Practitioner, Expert) com provas cronometradas, nota mínima e emissão de certificado com ID único. Não é permitido obter mais de um certificado por e-mail no mesmo nível.
+- **Páginas de conteúdo**: O que é XGH, os 22 princípios (com contraste às práticas recomendadas), POC/MVP e agilidade sustentável, com links para referências externas e diagramas.
+- **Certificação**: Três níveis (XGH Foundation, Practitioner, Expert) com provas cronometradas, nota mínima e emissão de certificado com ID único. Não é permitido obter mais de um certificado por e-mail no mesmo nível.
 - **Validação de certificados**: Consulta pela ID do certificado ou pela identificação do participante (e-mail ou nome).
 - **Certificado em PDF**: Página de certificado com opção de download em PDF e botão para compartilhar no LinkedIn; badges do nível são exibidos no certificado.
 

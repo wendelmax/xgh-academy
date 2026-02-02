@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Manifesto Extreme Go Horse | XDH Academy",
+  title: "Manifesto Extreme Go Horse | XGH Academy",
   description:
     "Manifesto para o Desenvolvimento de Software eXtreme Go Horse (XGH): valores e princípios documentados. Sátira às más práticas.",
 };

@@ -53,7 +53,7 @@ export default function BadgesPage() {
       </h1>
       <p className="mt-4 text-neutral-600 dark:text-neutral-400">
         Digite seu e-mail (o mesmo usado na certificação) para listar seus
-        certificados e badges XDH. Os badges ficam anexados a cada certificado
+        certificados e badges XGH. Os badges ficam anexados a cada certificado
         emitido.
       </p>
 
@@ -131,7 +131,7 @@ export default function BadgesPage() {
                         </Link>
                         <LinkedInIntegration
                           certificateId={c.certificateId}
-                          credentialName={`${c.levelName} - XDH Academy`}
+                          credentialName={`${c.levelName} - XGH Academy`}
                         />
                       </div>
                     </div>

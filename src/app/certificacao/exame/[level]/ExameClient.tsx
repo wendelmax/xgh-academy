@@ -327,7 +327,7 @@ export default function ExameClient({ level }: { level: CertificationLevel }) {
               </Link>
               <a
                 href={`/api/certificates/${result.certificate.certificateId}/pdf`}
-                download={`XDH-Academy-${result.certificate.certificateId}.pdf`}
+                download={`XGH-Academy-${result.certificate.certificateId}.pdf`}
                 className="inline-block rounded-lg border border-teal-600 px-4 py-2 text-sm font-medium text-teal-700 bg-teal-50 dark:border-teal-500 dark:text-teal-300 dark:bg-teal-900/30"
               >
                 Baixar PDF

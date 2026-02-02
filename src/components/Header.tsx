@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 const nav = [
   { href: "/", label: "Início" },
-  { href: "/o-que-e-xdh", label: "O que é XDH" },
+  { href: "/o-que-e-xgh", label: "O que é XGH" },
   { href: "/manifesto", label: "Manifesto" },
   { href: "/principios", label: "Princípios" },
   { href: "/boas-praticas", label: "POC, MVP e Agilidade" },
@@ -24,7 +24,7 @@ export default function Header() {
           href="/"
           className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-white"
         >
-          XDH Academy
+          XGH Academy
         </Link>
         <nav className="flex flex-wrap items-center gap-1">
           {nav.map(({ href, label }) => (

@@ -36,7 +36,7 @@ function getBaseUrl(request: NextRequest): string {
   if (url?.origin) return url.origin;
   return process.env.VERCEL_URL
     ? `https://${process.env.VERCEL_URL}`
-    : "https://xdh-academy.vercel.app";
+    : "https://xgh-academy.vercel.app";
 }
 
 export async function GET(
@@ -109,7 +109,7 @@ export async function GET(
   doc.setTextColor(255, 255, 255);
   doc.setFont("helvetica", "bold");
   doc.setFontSize(10);
-  doc.text("XDH ACADEMY", margin + 10, margin + 9);
+  doc.text("XGH ACADEMY", margin + 10, margin + 9);
   doc.text("CERTIFICATE OF COMPLETION", w - margin - 10, margin + 9, { align: "right" });
 
   // Main Content Area
@@ -135,12 +135,12 @@ export async function GET(
   doc.setTextColor(r, g, b);
   doc.setFont("helvetica", "bold");
   doc.setFontSize(18);
-  doc.text(`XDH ${levelLabel}`, centerX, 115, { align: "center" });
+  doc.text(`XGH ${levelLabel}`, centerX, 115, { align: "center" });
 
   doc.setTextColor(80, 80, 80);
   doc.setFont("helvetica", "normal");
   doc.setFontSize(11);
-  doc.text("Issued by XDH Academy Global Certification Program", centerX, 128, { align: "center" });
+  doc.text("Issued by XGH Academy Global Certification Program", centerX, 128, { align: "center" });
 
   // Divider line
   doc.setDrawColor(230, 230, 230);
@@ -208,7 +208,7 @@ export async function GET(
     status: 200,
     headers: {
       "Content-Type": "application/pdf",
-      "Content-Disposition": `attachment; filename="XDH-Academy-${cert.certificateId}.pdf"`,
+      "Content-Disposition": `attachment; filename="XGH-Academy-${cert.certificateId}.pdf"`,
     },
   });
 }

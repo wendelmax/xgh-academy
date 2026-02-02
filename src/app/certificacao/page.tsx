@@ -3,7 +3,7 @@ import { certificationLevels } from "@/data/certification";
 import BadgeSpotlight from "@/components/BadgeSpotlight";
 
 export const metadata = {
-  title: "Certificação XDH | XDH Academy",
+  title: "Certificação XGH | XGH Academy",
   description:
     "Níveis Foundation, Practitioner e Expert. Provas formais e certificado verificável por ID ou participante.",
 };
@@ -12,10 +12,10 @@ export default function CertificacaoPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-12">
       <h1 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-white">
-        Certificação XDH
+        Certificação XGH
       </h1>
       <p className="mt-4 text-neutral-600 dark:text-neutral-400">
-        A XDH Academy oferece certificação em três níveis, alinhada ao formato
+        A XGH Academy oferece certificação em três níveis, alinhada ao formato
         de certificações profissionais: provas com tempo limitado, pontuação
         mínima e emissão de certificado com identificador único para validação
         pública. O tom é sério; o conteúdo, um pouco de sátira com aprendizado de verdade.

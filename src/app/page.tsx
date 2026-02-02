@@ -5,7 +5,7 @@ export default function HomePage() {
     <div className="mx-auto max-w-6xl px-4 py-12 sm:py-16">
       <section className="text-center">
         <h1 className="text-4xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-5xl">
-          XDH Academy
+          XGH Academy
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-600 dark:text-neutral-400">
           Aprendizado formal sobre Extreme Go Horse: da sátira à verdade
@@ -14,7 +14,7 @@ export default function HomePage() {
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Link
-            href="/o-que-e-xdh"
+            href="/o-que-e-xgh"
             className="rounded-lg bg-neutral-900 px-6 py-3 font-medium text-white transition hover:bg-neutral-700 dark:bg-teal-600 dark:hover:bg-teal-500"
           >
             Começar a estudar
@@ -23,15 +23,15 @@ export default function HomePage() {
             href="/certificacao"
             className="rounded-lg border border-neutral-300 px-6 py-3 font-medium text-neutral-700 transition hover:bg-neutral-100 dark:border-neutral-600 dark:text-neutral-300 dark:hover:bg-neutral-800"
           >
-            Certificação XDH
+            Certificação XGH
           </Link>
         </div>
       </section>
 
       <section className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         <Card
-          href="/o-que-e-xdh"
-          title="O que é XDH"
+          href="/o-que-e-xgh"
+          title="O que é XGH"
           description="Origem, contexto e por que estudar o Extreme Go Horse de forma séria para extrair lições e anti-padrões."
         />
         <Card
@@ -63,7 +63,7 @@ export default function HomePage() {
 
       <section className="mt-16 rounded-2xl border border-neutral-200 bg-neutral-50 p-8 dark:border-neutral-800 dark:bg-neutral-900/50">
         <h2 className="text-xl font-semibold text-neutral-900 dark:text-white">
-          Por que uma academia XDH?
+          Por que uma academia XGH?
         </h2>
         <p className="mt-3 text-neutral-600 dark:text-neutral-400">
           O Extreme Go Horse nasceu como sátira às más práticas de desenvolvimento.
