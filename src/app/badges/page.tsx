@@ -49,7 +49,7 @@ export default function BadgesPage() {
   return (
     <div className="mx-auto max-w-2xl px-4 py-12">
       <h1 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-white">
-        Meus badges
+        Meus Certificados
       </h1>
       <p className="mt-4 text-neutral-600 dark:text-neutral-400">
         Digite seu e-mail (o mesmo usado na certificação) para listar seus

@@ -140,7 +140,7 @@ export default function CertificateView({
             href="/badges"
             className="inline-flex items-center rounded-lg border border-neutral-300 px-4 py-2.5 text-sm font-medium text-neutral-700 hover:bg-neutral-100 dark:border-neutral-600 dark:text-neutral-300 dark:hover:bg-neutral-800"
           >
-            Ver meus badges
+            Ver meus certificados
           </Link>
         </div>
       </div>

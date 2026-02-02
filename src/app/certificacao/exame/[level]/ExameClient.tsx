@@ -190,14 +190,14 @@ export default function ExameClient({ level }: { level: CertificationLevel }) {
 
   if (step === "identify") {
     return (
-      <div className="rounded-2xl border border-neutral-200 bg-white p-8 dark:border-neutral-800 dark:bg-neutral-900/50">
-        <h1 className="text-2xl font-bold text-neutral-900 dark:text-white">
+      <div className="rounded-2xl border border-neutral-200 bg-white p-4 sm:p-8 dark:border-neutral-800 dark:bg-neutral-900/50">
+        <h1 className="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-white">
           Identificação
         </h1>
-        <p className="mt-2 text-neutral-600 dark:text-neutral-400">
+        <p className="mt-2 text-sm sm:text-base text-neutral-600 dark:text-neutral-400">
           Informe seu e-mail. Verificamos por e-mail se você já possui esta certificação antes de exibir o exame.
         </p>
-        <div className="mt-6 max-w-sm">
+        <div className="mt-6 w-full max-w-sm">
           <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300">
             E-mail
           </label>
@@ -212,18 +212,18 @@ export default function ExameClient({ level }: { level: CertificationLevel }) {
         {error && (
           <p className="mt-4 text-red-600 dark:text-red-400">{error}</p>
         )}
-        <div className="mt-6 flex flex-wrap gap-4">
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
           <button
             type="button"
             onClick={handleContinueToExam}
             disabled={checking || !email.trim()}
-            className="rounded-lg bg-neutral-900 px-6 py-3 font-medium text-white hover:bg-neutral-700 disabled:opacity-50 dark:bg-teal-600 dark:hover:bg-teal-500"
+            className="w-full rounded-lg bg-neutral-900 px-6 py-3 text-sm sm:text-base font-medium text-white hover:bg-neutral-700 disabled:opacity-50 dark:bg-teal-600 dark:hover:bg-teal-500 sm:w-auto"
           >
             {checking ? "Verificando..." : "Continuar para o exame"}
           </button>
           <Link
             href="/certificacao"
-            className="rounded-lg border border-neutral-300 px-5 py-2.5 text-sm font-medium text-neutral-700 hover:bg-neutral-100 dark:border-neutral-600 dark:text-neutral-300"
+            className="w-full rounded-lg border border-neutral-300 px-5 py-2.5 text-center text-sm font-medium text-neutral-700 hover:bg-neutral-100 dark:border-neutral-600 dark:text-neutral-300 sm:w-auto"
           >
             Voltar
           </Link>
@@ -234,32 +234,32 @@ export default function ExameClient({ level }: { level: CertificationLevel }) {
 
   if (step === "alreadyCertified" && alreadyCertifiedCertificate) {
     return (
-      <div className="rounded-2xl border border-teal-200 bg-teal-50 p-8 dark:border-teal-800 dark:bg-teal-950/30">
-        <h2 className="text-2xl font-bold text-teal-900 dark:text-teal-100">
+      <div className="rounded-2xl border border-teal-200 bg-teal-50 p-4 sm:p-8 dark:border-teal-800 dark:bg-teal-950/30">
+        <h2 className="text-xl sm:text-2xl font-bold text-teal-900 dark:text-teal-100">
           Você já possui esta certificação
         </h2>
-        <p className="mt-2 text-teal-800 dark:text-teal-200">
+        <p className="mt-2 text-sm sm:text-base text-teal-800 dark:text-teal-200">
           O e-mail informado já está associado a um certificado aprovado para este nível.
         </p>
-        <p className="mt-3 font-mono text-sm text-teal-700 dark:text-teal-300">
+        <p className="mt-3 break-words font-mono text-xs sm:text-sm text-teal-700 dark:text-teal-300">
           {alreadyCertifiedCertificate.participantName} – {alreadyCertifiedCertificate.levelName}
         </p>
-        <p className="mt-1 text-sm text-teal-600 dark:text-teal-400">
+        <p className="mt-1 break-all text-xs sm:text-sm text-teal-600 dark:text-teal-400">
           ID: {alreadyCertifiedCertificate.certificateId}
         </p>
-        <div className="mt-6 flex flex-wrap gap-3">
-          <Link
-            href={`/certificado/${alreadyCertifiedCertificate.certificateId}`}
-            className="inline-block rounded-lg bg-teal-600 px-4 py-2 text-sm font-medium text-white hover:bg-teal-500 dark:bg-teal-500 dark:hover:bg-teal-400"
-          >
-            Ver certificado e baixar PDF
-          </Link>
-          <Link
-            href="/certificacao"
-            className="inline-block rounded-lg border border-teal-600 px-4 py-2 text-sm font-medium text-teal-700 bg-teal-50 dark:border-teal-500 dark:text-teal-300 dark:bg-teal-900/30"
-          >
-            Voltar à certificação
-          </Link>
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link
+                href={`/certificado/${alreadyCertifiedCertificate.certificateId}`}
+                className="w-full rounded-lg bg-teal-600 px-4 py-2 text-center text-sm font-medium text-white hover:bg-teal-500 dark:bg-teal-500 dark:hover:bg-teal-400 sm:w-auto"
+              >
+                Ver certificado e baixar PDF
+              </Link>
+              <Link
+                href="/certificacao"
+                className="w-full rounded-lg border border-teal-600 bg-teal-50 px-4 py-2 text-center text-sm font-medium text-teal-700 dark:border-teal-500 dark:text-teal-300 dark:bg-teal-900/30 sm:w-auto"
+              >
+                Voltar à certificação
+              </Link>
         </div>
       </div>
     );
@@ -294,63 +294,63 @@ export default function ExameClient({ level }: { level: CertificationLevel }) {
 
   if (submitted && result) {
     return (
-      <div className="rounded-2xl border border-neutral-200 bg-white p-8 dark:border-neutral-800 dark:bg-neutral-900/50">
-        <h2 className="text-2xl font-bold text-neutral-900 dark:text-white">
+      <div className="rounded-2xl border border-neutral-200 bg-white p-4 sm:p-8 dark:border-neutral-800 dark:bg-neutral-900/50">
+        <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-white">
           {result.passed ? "Aprovado" : "Reprovado"}
         </h2>
-        <p className="mt-2 text-neutral-600 dark:text-neutral-400">
+        <p className="mt-2 text-sm sm:text-base text-neutral-600 dark:text-neutral-400">
           {result.passed
             ? "Parabéns. Você provou que consegue distinguir XGH de práticas saudáveis (e que leu as questões)."
             : "Não foi dessa vez. O lado bom: você sabe o que NÃO fazer. Revise o material e tente de novo."}
         </p>
-        <p className="mt-3 text-sm text-neutral-500 dark:text-neutral-500">
+        <p className="mt-3 text-xs sm:text-sm text-neutral-500 dark:text-neutral-500">
           Pontuação: {result.score}% ({result.score}/{result.totalQuestions}{" "}
           questões). Nota mínima: {result.minScore}%.
         </p>
         {result.passed && result.certificate && (
-          <div className="mt-6 rounded-xl border border-teal-200 bg-teal-50 p-6 dark:border-teal-800 dark:bg-teal-950/30">
+          <div className="mt-6 rounded-xl border border-teal-200 bg-teal-50 p-4 sm:p-6 dark:border-teal-800 dark:bg-teal-950/30">
             <p className="font-semibold text-teal-900 dark:text-teal-100">
               Certificado emitido
             </p>
-            <p className="mt-2 font-mono text-sm text-teal-800 dark:text-teal-200">
+            <p className="mt-2 break-all font-mono text-xs sm:text-sm text-teal-800 dark:text-teal-200">
               ID: {result.certificate.certificateId}
             </p>
-            <p className="mt-1 text-sm text-teal-700 dark:text-teal-300">
+            <p className="mt-1 break-words text-xs sm:text-sm text-teal-700 dark:text-teal-300">
               {result.certificate.participantName} – {result.certificate.levelName}
             </p>
-            <div className="mt-4 flex flex-wrap gap-3">
+            <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
                 href={`/certificado/${result.certificate.certificateId}`}
-                className="inline-block rounded-lg bg-teal-600 px-4 py-2 text-sm font-medium text-white hover:bg-teal-500 dark:bg-teal-500 dark:hover:bg-teal-400"
+                className="w-full rounded-lg bg-teal-600 px-4 py-2 text-center text-sm font-medium text-white hover:bg-teal-500 dark:bg-teal-500 dark:hover:bg-teal-400 sm:w-auto"
               >
                 Ver certificado e baixar PDF
               </Link>
               <a
                 href={`/api/certificates/${result.certificate.certificateId}/pdf`}
                 download={`XGH-Academy-${result.certificate.certificateId}.pdf`}
-                className="inline-block rounded-lg border border-teal-600 px-4 py-2 text-sm font-medium text-teal-700 bg-teal-50 dark:border-teal-500 dark:text-teal-300 dark:bg-teal-900/30"
+                className="w-full rounded-lg border border-teal-600 bg-teal-50 px-4 py-2 text-center text-sm font-medium text-teal-700 dark:border-teal-500 dark:text-teal-300 dark:bg-teal-900/30 sm:w-auto"
               >
                 Baixar PDF
               </a>
               <Link
                 href="/validar"
-                className="inline-block font-medium text-teal-600 hover:underline dark:text-teal-400"
+                className="w-full text-center text-sm font-medium text-teal-600 hover:underline dark:text-teal-400 sm:w-auto"
               >
                 Validar certificado
               </Link>
             </div>
           </div>
         )}
-        <div className="mt-6 flex gap-4">
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
           <Link
             href="/certificacao"
-            className="rounded-lg bg-neutral-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-neutral-700 dark:bg-teal-600 dark:hover:bg-teal-500"
+            className="w-full rounded-lg bg-neutral-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-neutral-700 dark:bg-teal-600 dark:hover:bg-teal-500 sm:w-auto"
           >
             Voltar à certificação
           </Link>
           <Link
             href="/"
-            className="rounded-lg border border-neutral-300 px-5 py-2.5 text-sm font-medium text-neutral-700 hover:bg-neutral-100 dark:border-neutral-600 dark:text-neutral-300"
+            className="w-full rounded-lg border border-neutral-300 px-5 py-2.5 text-center text-sm font-medium text-neutral-700 hover:bg-neutral-100 dark:border-neutral-600 dark:text-neutral-300 sm:w-auto"
           >
             Início
           </Link>

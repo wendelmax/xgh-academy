@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback, Suspense } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 
 interface CertificateRecord {
   certificateId: string;
@@ -16,7 +17,9 @@ interface CertificateRecord {
   issuedAt: string;
 }
 
-export default function ValidarPage() {
+function ValidarContent() {
+  const searchParams = useSearchParams();
+  const idFromUrl = searchParams.get("id")?.trim() ?? "";
   const [mode, setMode] = useState<"id" | "participant">("id");
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
@@ -27,14 +30,15 @@ export default function ValidarPage() {
     error?: string;
   } | null>(null);
 
-  const search = async () => {
-    if (!query.trim()) return;
+  const search = useCallback(async () => {
+    const value = query.trim();
+    if (!value) return;
     setLoading(true);
     setResult(null);
     try {
       const param = mode === "id" ? "id" : "participant";
       const res = await fetch(
-        `/api/certificates/verify?${param}=${encodeURIComponent(query.trim())}`
+        `/api/certificates/verify?${param}=${encodeURIComponent(value)}`
       );
       const data = await res.json();
       if (res.ok) {
@@ -52,7 +56,18 @@ export default function ValidarPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [query, mode]);
+
+  useEffect(() => {
+    if (!idFromUrl) return;
+    setMode("id");
+    setQuery(idFromUrl);
+  }, [idFromUrl]);
+
+  useEffect(() => {
+    if (!idFromUrl || query !== idFromUrl) return;
+    search();
+  }, [idFromUrl, query, search]);
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-12">
@@ -134,50 +149,69 @@ export default function ValidarPage() {
               {result.error}
             </p>
           )}
-          {result.valid && result.certificate && (
-            <div>
-              <p className="font-semibold text-teal-900 dark:text-teal-100">
-                Certificado válido
-              </p>
-              <dl className="mt-4 grid gap-2 text-sm">
-                <div>
-                  <dt className="text-neutral-500 dark:text-neutral-400">ID</dt>
-                  <dd className="font-mono text-teal-800 dark:text-teal-200">
-                    {result.certificate.certificateId}
-                  </dd>
+          {result.valid && result.certificate && (() => {
+            const levelSlug =
+              result.certificate.level === "foundation"
+                ? "foundation"
+                : result.certificate.level === "practitioner"
+                  ? "practitioner"
+                  : "expert";
+            return (
+            <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-8">
+              <div className="flex shrink-0 justify-center sm:justify-start">
+                <div className="rounded-xl border-2 border-teal-200 bg-white p-3 shadow-inner dark:border-teal-700 dark:bg-neutral-900/50">
+                  <img
+                    src={`/api/badges/${levelSlug}?v=2`}
+                    alt={`Badge ${result.certificate.levelName}`}
+                    className="h-28 w-28 object-contain sm:h-32 sm:w-32"
+                  />
                 </div>
-                <div>
-                  <dt className="text-neutral-500 dark:text-neutral-400">
-                    Participante
-                  </dt>
-                  <dd className="text-teal-800 dark:text-teal-200">
-                    {result.certificate.participantName}
-                  </dd>
-                </div>
-                <div>
-                  <dt className="text-neutral-500 dark:text-neutral-400">
-                    Nível
-                  </dt>
-                  <dd className="text-teal-800 dark:text-teal-200">
-                    {result.certificate.levelName}
-                  </dd>
-                </div>
-                <div>
-                  <dt className="text-neutral-500 dark:text-neutral-400">
-                    Emitido em
-                  </dt>
-                  <dd className="text-teal-800 dark:text-teal-200">
-                    {new Date(result.certificate.issuedAt).toLocaleDateString(
-                      "pt-BR",
-                      {
-                        dateStyle: "long",
-                      }
-                    )}
-                  </dd>
-                </div>
-              </dl>
+              </div>
+              <div className="min-w-0 flex-1">
+                <p className="font-semibold text-teal-900 dark:text-teal-100">
+                  Certificado válido
+                </p>
+                <dl className="mt-4 grid gap-2 text-sm">
+                  <div>
+                    <dt className="text-neutral-500 dark:text-neutral-400">ID</dt>
+                    <dd className="break-all font-mono text-teal-800 dark:text-teal-200">
+                      {result.certificate.certificateId}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="text-neutral-500 dark:text-neutral-400">
+                      Participante
+                    </dt>
+                    <dd className="text-teal-800 dark:text-teal-200">
+                      {result.certificate.participantName}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="text-neutral-500 dark:text-neutral-400">
+                      Nível
+                    </dt>
+                    <dd className="text-teal-800 dark:text-teal-200">
+                      {result.certificate.levelName}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="text-neutral-500 dark:text-neutral-400">
+                      Emitido em
+                    </dt>
+                    <dd className="text-teal-800 dark:text-teal-200">
+                      {new Date(result.certificate.issuedAt).toLocaleDateString(
+                        "pt-BR",
+                        {
+                          dateStyle: "long",
+                        }
+                      )}
+                    </dd>
+                  </div>
+                </dl>
+              </div>
             </div>
-          )}
+            );
+          })()}
           {result.valid && result.certificates && result.certificates.length > 0 && (
             <div>
               <p className="font-semibold text-teal-900 dark:text-teal-100">
@@ -217,5 +251,24 @@ export default function ValidarPage() {
         </Link>
       </div>
     </div>
+  );
+}
+
+export default function ValidarPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="mx-auto max-w-2xl px-4 py-12">
+          <h1 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-white">
+            Validar Certificado
+          </h1>
+          <p className="mt-4 text-neutral-600 dark:text-neutral-400">
+            Carregando...
+          </p>
+        </div>
+      }
+    >
+      <ValidarContent />
+    </Suspense>
   );
 }
